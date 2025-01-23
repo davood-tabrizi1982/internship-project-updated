@@ -9,8 +9,8 @@ from selenium.webdriver.chrome.options import Options
 from app.application import Application
 
 
-#def browser_init(context, scenario_name):
-def browser_init(context):
+def browser_init(context, scenario_name):
+#def browser_init(context):
 
     """
     :param context: Behave context
@@ -24,29 +24,29 @@ def browser_init(context):
     #context.driver = webdriver.Firefox(service=service)
 
     ### HEADLESS MODE ####
-    options = webdriver.ChromeOptions()
-    options.add_argument('headless')
-    service = Service(ChromeDriverManager().install())
-    context.driver = webdriver.Firefox(
-         options=options,
-         service=service
-     )
+    #options = webdriver.ChromeOptions()
+    #options.add_argument('headless')
+    #service = Service(ChromeDriverManager().install())
+    #context.driver = webdriver.Firefox(
+     #    options=options,
+     #    service=service
+     #)
 
     ### BROWSERSTACK ###
     # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
-    #bs_user = 'davoodtabrizi_7TfE96'
-    #bs_key = '4ucuMqySAVqsJapExtuc'
-    #url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    bs_user = 'davoodtabrizi_7TfE96'
+    bs_key = '4ucuMqySAVqsJapExtuc'
+    url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
 
-    #options = Options()
-    #bstack_options = {
-         #"os" : "Windows",
-         #"osVersion" : "11",
-         #'browserName': 'edge',
-         #'sessionName': scenario_name,
-     #}
-    #options.set_capability('bstack:options', bstack_options)
-    #context.driver = webdriver.Remote(command_executor=url, options=options)
+    options = Options()
+    bstack_options = {
+         "os" : "osx",
+         "osVersion" : "Sequoia",
+         'browserName': 'safari',
+         'sessionName': scenario_name,
+     }
+    options.set_capability('bstack:options', bstack_options)
+    context.driver = webdriver.Remote(command_executor=url, options=options)
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
@@ -56,8 +56,8 @@ def browser_init(context):
 
 def before_scenario(context, scenario):
     print('\nStarted scenario: ', scenario.name)
-    # browser_init(context, scenario.name)
-    browser_init(context)
+    browser_init(context, scenario.name)
+    #browser_init(context)
 
 
 def before_step(context, step):
