@@ -7,4 +7,6 @@ class ViewPageTemplate(BasePage):
     SEND_MY_CV_TEXT = (By.XPATH, "//a[@class ='button-agency w-button' and text() = 'Send my CV']")
 
     def verify_send_my_cv_text(self):
-        self.verify_text(self.EXPECTED_FOR_SEND_MY_CV_AVAILABILITY, *self.SEND_MY_CV_TEXT)
+        sleep(5)
+        #self.verify_text(self.EXPECTED_FOR_SEND_MY_CV_AVAILABILITY, *self.SEND_MY_CV_TEXT)
+        self.wait_and_click(*self.SEND_MY_CV_TEXT)

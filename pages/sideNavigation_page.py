@@ -8,4 +8,5 @@ class SideNavigation(BasePage):
  MARKET_BUTTON = (By.XPATH, "//div[text()='Market']")
 
  def click_market(self):
+     sleep(5)
      self.wait_and_click(*self.MARKET_BUTTON)

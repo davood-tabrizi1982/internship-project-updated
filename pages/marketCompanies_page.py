@@ -8,6 +8,8 @@ class MarketCompaniesPage(BasePage):
  ADD_COMPANY_BUTTON = (By.XPATH, "//div[text()='Add company']")
 
  def verify_market(self):
+     sleep(3)
      self.verify_partial_url(self.MARKET_VERIFICATION_URL)
  def click_add_company(self):
+     sleep(3)
      self.wait_and_click(*self.ADD_COMPANY_BUTTON)

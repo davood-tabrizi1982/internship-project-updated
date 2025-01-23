@@ -10,9 +10,16 @@ class SignIn(BasePage):
  PASSWORD_PLACE_HOLDER = (By.CSS_SELECTOR, "input[data-name='Password']")
  CONTINUE_BUTTON =(By.XPATH, "//a[text()='Continue']")
 
- def signin(self):
+ def signin_username(self):
+     sleep(2)
      self.input_text("davood_tabrizi@yahoo.com", *self.EMAIL_PLACE_HOLDER)
+     sleep(2)
+
+ def signin_password(self):
+     sleep(2)
      self.input_text("Davood1234$", *self.PASSWORD_PLACE_HOLDER)
+
+ def signin_button(self):
      self.wait_for_element_clickable(*self.CONTINUE_BUTTON).click()
      sleep(5)
 
