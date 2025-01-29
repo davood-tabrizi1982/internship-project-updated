@@ -6,6 +6,8 @@ from pages.signIn_page import SignIn
 from pages.marketCompanies_page import MarketCompaniesPage
 from pages.presentationAgency_page import PresentationAgency
 from pages.viewPageTemplate_page import  ViewPageTemplate
+from pages.mobileWeb_bottomNavigationBar_page import BottomNavigationBar
+from pages.calendar_page import Calendar
 
 class Application:
 
@@ -19,3 +21,5 @@ class Application:
         self.marketCompanies_page = MarketCompaniesPage(driver)
         self.presentationAgency_page = PresentationAgency(driver)
         self.viewPageTemplate_page = ViewPageTemplate(driver)
+        self.mobileWeb_bottomNavigationBar_page = BottomNavigationBar(driver)
+        self.calendar_page = Calendar(driver)

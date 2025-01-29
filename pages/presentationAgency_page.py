@@ -11,5 +11,5 @@ class PresentationAgency(BasePage):
         self.verify_partial_url(self.VERIFY_PRESENTATION_AGENCY_PAGE_URL)
     def click_view_page_button(self):
         sleep(5)
-        self.wait_and_click(*self.VIEW_PAGE_BUTTON)
+        self.wait_and_click(self.VIEW_PAGE_BUTTON)
         sleep(5)

@@ -12,4 +12,4 @@ class MarketCompaniesPage(BasePage):
      self.verify_partial_url(self.MARKET_VERIFICATION_URL)
  def click_add_company(self):
      sleep(3)
-     self.wait_and_click(*self.ADD_COMPANY_BUTTON)
+     self.wait_and_click(self.ADD_COMPANY_BUTTON)
