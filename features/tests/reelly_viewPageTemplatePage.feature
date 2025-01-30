@@ -15,7 +15,6 @@ Feature: view page template
 
 
 
-
   Scenario: User can open market tab and go to the view page template(mobile web)
     Given Open the main page https://soft.reelly.io
     When  Log in to the page.

@@ -9,4 +9,4 @@ class SideNavigation(BasePage):
 
  def click_market(self):
      sleep(5)
-     self.wait_and_click(*self.MARKET_BUTTON)
+     self.wait_and_click(self.MARKET_BUTTON)
